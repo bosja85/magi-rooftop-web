@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav button {
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        nav button:hover {
+            background-color: #0056b3;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007BFF;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            section {
+                padding: 15px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apartment Information</h1>
+    </header>
+
+    <nav>
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('me')">Crnogorski</button>
+        <button onclick="setLanguage('ru')">Русский</button>
+    </nav>
+
+    <section id="things-to-know">
+        <h2>Things to Know</h2>
+        <p lang="en">Check-in time is after 2 PM. Please handle the property with care.</p>
+        <p lang="me" style="display: none;">Vrijeme prijave je nakon 14h. Molimo Vas da pažljivo rukujete imovinom.</p>
+        <p lang="ru" style="display: none;">Время заезда после 14:00. Пожалуйста, обращайтесь с имуществом бережно.</p>
+    </section>
+
+    <section id="rules">
+        <h2>Rules</h2>
+        <p lang="en">No smoking. No pets. Quiet hours are from 10 PM to 8 AM.</p>
+        <p lang="me" style="display: none;">Zabranjeno pušenje. Kućni ljubimci nisu dozvoljeni. Period mira traje od 22h do 8h.</p>
+        <p lang="ru" style="display: none;">Курение запрещено. Домашние животные не допускаются. Тишина с 22:00 до 8:00.</p>
+    </section>
+
+    <section id="service-info">
+        <h2>Service Information</h2>
+        <p lang="en">For any issues, contact us at +123 456 789 or email support@apartment.com.</p>
+        <p lang="me" style="display: none;">Za bilo kakve probleme kontaktirajte nas na +123 456 789 ili email support@apartment.com.</p>
+        <p lang="ru" style="display: none;">По любым вопросам свяжитесь с нами по телефону +123 456 789 или по электронной почте support@apartment.com.</p>
+    </section>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[lang]').forEach(el => {
+                el.style.display = el.lang === lang ? 'block' : 'none';
+            });
+        }
+        // Set default language to English
+        setLanguage('en');
+    </script>
+</body>
+</html>
